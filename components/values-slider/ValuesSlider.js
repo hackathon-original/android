@@ -6,6 +6,9 @@ import { currency } from '../../services/format';
 import { getBalance, getRewards } from '../../services/rest';
 
 export default class ValuesSlider extends React.Component {
+  static navigationOptions = {
+    title: 'Adicionar Aplicação',
+  };
   constructor() {
     super();
     this.state = {
@@ -32,6 +35,8 @@ export default class ValuesSlider extends React.Component {
     });
   }
   tradeBitcoin() {
+    const { navigate } = this.props.navigation;
+    // navigate('Profile', { name: 'Jane' })
     return console.log('trade');
   }
   getDate() {
