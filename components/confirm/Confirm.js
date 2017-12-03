@@ -67,6 +67,9 @@ export default class ValuesSlider extends React.Component {
             <Text style={{marginTop:5}}>Quantidade de Bitcoins:</Text>
             <Text style={{fontSize:20,textAlign:'right'}}>{this.state.btc}</Text>
           </View>
+          <Button onPress={() => this.applyBitcoin()} title={"Confirmar!"} color={colors.primaryColor}
+            style={{marginTop: 30}}>
+          </Button>
         </View>
       </View>
     );
