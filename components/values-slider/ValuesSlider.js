@@ -36,7 +36,17 @@ export default class ValuesSlider extends React.Component {
   }
   tradeBitcoin() {
     const { navigate } = this.props.navigation;
-    // navigate('Profile', { name: 'Jane' })
+    let objective = {
+      target: this.state.target,
+      targetAmount: this.state.targetValue,
+      date: this.state.date,
+      savedAmount: this.state.amountRewards + this.state.amountCc
+    };
+    let application = {
+      amount_cc: this.state.amountCc,
+      amount_rewards: this.state.amountRewards
+    }
+    navigate('ConfirmApplication', { objective, application })
     return console.log('trade');
   }
   getDate() {
@@ -77,7 +87,7 @@ export default class ValuesSlider extends React.Component {
             style={{ height: 40, marginBottom: 20 }}
             onChangeText={(targetValue) => this.setState({targetValue})}
             value={this.state.targetValue}
-            placeholder={"Ex: Viagem para o Canadá"}/>
+            placeholder={"Ex: 1200.00"}/>
 
           <View style={{}}>
             <View style={{ flexDirection: 'row' }}>
@@ -95,7 +105,7 @@ export default class ValuesSlider extends React.Component {
           </View>
           <View style={{}}>
             <View style={{ flexDirection: 'row' }}>
-              <Text style={{ flex: 1, justifyContent: 'center', marginTop: 7 }}>Saldo em rewards</Text>
+              <Text style={{ flex: 1, justifyContent: 'center', marginTop: 7 }}>Saldo em Rewards</Text>
               <Text style={styles.currentBalance}>{currency(this.state.amountRewards)}</Text>
             </View>
             <Slider

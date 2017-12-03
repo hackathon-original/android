@@ -36,4 +36,14 @@ export function addObjective(objective) {
   });
 }
 
+export function getBitcoin(brl) {
+  return axios.get('http://hackathon-btc.now.sh/brl-btc')
+    .then(extractData);
+}
+
+export function applyBtc({ amount_cc, amount_rewards }) {
+  return axios.post('http://hackathon-btc.now.sh/apply-btc', { amount_cc, amount_rewards })
+    .then(extractData);
+}
+
 const extractData = response => (console.log(response.data), response.data);

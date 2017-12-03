@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import ValuesSlider from './components/values-slider/ValuesSlider';
 import ObjectivesList from './components/objectives-list/ObjectivesList';
+import Confirm from './components/confirm/Confirm';
 import {
   StackNavigator,
 } from 'react-navigation';
@@ -9,6 +10,7 @@ import {
 const SimpleApp = StackNavigator({
   Home: { screen: ObjectivesList },
   NewObjective: { screen: ValuesSlider },
+  ConfirmApplication: { screen: Confirm }
 });
 
 export default class App extends React.Component {

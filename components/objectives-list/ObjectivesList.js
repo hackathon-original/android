@@ -21,9 +21,6 @@ export default class ObjectivesList extends React.Component {
       this.setState({ objectives });
     });
   }
-  addObjective() {
-    
-  }
   render() {
     const { navigate } = this.props.navigation;
     return (
